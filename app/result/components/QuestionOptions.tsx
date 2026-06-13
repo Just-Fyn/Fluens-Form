@@ -1,5 +1,6 @@
 "use client";
 
+import { CheckInput } from "@/app/components/ui/inputs";
 import { useFormSubmissionStore } from "@/stores/form-submission-store";
 import { SubmissionQuestion } from "@/types/form";
 import { useState } from "react";
@@ -22,22 +23,22 @@ export default function QuestionOptions(q: SubmissionQuestion) {
               <label 
                 key={o.id} 
                 htmlFor={o.id}
-                className={`relative flex items-center gap-4 p-4 rounded-[24px] border border-[#e2e8f0] bg-white transition-all 
-                  ${isSelected ? "bg-[#f2f7fd] border-[#4ca9ff]" : "hover:border-[#b0c4db]"} 
+                className={`relative flex items-center gap-4 p-4 rounded-3xl border border-muted bg-foreground transition-all 
+                  ${isSelected ? "bg-brand-light/10 border-brand" : "hover:border-muted-dark"} 
                   ${isWrong ? "border-red-200! bg-red-50/50!" : ""} 
                   ${isCorrect && isSelected ? "border-green-200 bg-green-50/50!" : ""}
                 `}
               >
-                <input
+                <CheckInput
                   id={o.id}
                   type={q.type}
-                  className="w-5 h-5 accent-[#168bff] border-[#e2e8f0] pointer-events-none"
+                  className="pointer-events-none"
                   checked={isSelected}
                   name={q.id}
                   readOnly
                 />
 
-                <span className="flex-1 text-[15px] outline-none resize-none text-[#0f172a]">
+                <span className="flex-1 text-[15px] outline-none resize-none">
                   {o.title}
                 </span>
 
@@ -68,11 +69,11 @@ export default function QuestionOptions(q: SubmissionQuestion) {
           <div className={`w-full max-w-sm relative text-[15px] ${openSelect ? "z-50" : ""}`}>
             <button
               type="button"
-              className={`flex items-center justify-between px-6 w-full h-[58px] border border-[#e2e8f0] rounded-full cursor-default bg-[#f8fbff] transition-all outline-none
-                ${openSelect ? "bg-white border-[#168bff] shadow-[0_0_0_5px_rgba(22,139,255,0.12)]" : ""}
+              className={`flex items-center justify-between px-6 w-full h-14.5 border border-muted rounded-full cursor-default bg-brand-light/10 transition-all outline-none
+                ${openSelect ? "bg-foreground border-brand shadow-[0_0_0_5px_var(--brand)]/12" : ""}
               `}
             >
-              <span className="text-left text-[#0f172a] truncate">
+              <span className="text-left truncate">
                 {q.options.filter((o) => o.id === q.answers)[0]?.title || <span className="opacity-50">Tidak dijawab</span>}
               </span>
               <LuChevronDown className="text-[#64748b]" size={20} />

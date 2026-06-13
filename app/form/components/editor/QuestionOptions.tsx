@@ -1,5 +1,6 @@
 "use client";
 
+import { CheckInput } from "@/app/components/ui/inputs";
 import { useFormEditorStore } from "@/stores/form-editor-store";
 import { useFormSubmissionStore } from "@/stores/form-submission-store";
 import { Question, SubmissionQuestion } from "@/types/form";
@@ -51,21 +52,21 @@ export default function QuestionOptions(q: Question) {
               <label
                 key={o.id}
                 htmlFor={o.id}
-                className={`relative flex items-center gap-4 p-4 rounded-[24px] border border-[#e2e8f0] bg-white transition-all 
-                  ${isCorrect ? "border-[#168bff]! bg-blue-50/50!" : ""}
+                className={`relative flex items-center gap-4 p-4 rounded-3xl border border-muted bg-foreground transition-all 
+                  ${isCorrect ? "border-brand! bg-blue-50/50!" : ""}
                 `}
               >
-                <input
+                <CheckInput
                   id={o.id}
                   type={q.type}
-                  className="w-5 h-5 accent-[#168bff] border-[#e2e8f0] pointer-events-none"
+                  className="pointer-events-none"
                   checked={isCorrect}
                   name={q.id}
                   readOnly
                 />
 
                 <Textarea
-                  className="flex-1 text-[15px] outline-none resize-none text-[#0f172a]"
+                  className="flex-1 text-[15px] outline-none resize-none"
                   defaultValue={o.title}
                   onBlur={(e) =>
                     updateQuestionOptionTitle(q.id, o.id, e.target.value)
@@ -75,7 +76,7 @@ export default function QuestionOptions(q: Question) {
 
                 <div className="relative mt-1 mr-1 flex items-center">
                   <button
-                    className={`w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openOption === o.id ? "bg-[#f2f7fd] text-[#168bff]" : "text-[#64748b] hover:bg-[#e2e8f0]"}`}
+                    className={`w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openOption === o.id ? "bg-brand-light/10 text-brand" : "text-[#64748b] hover:bg-muted"}`}
                     onClick={() => opToggle(o.id)}
                   >
                     <LuEllipsisVertical size={18} />
@@ -87,9 +88,9 @@ export default function QuestionOptions(q: Question) {
                         className="fixed inset-0 z-90"
                         onClick={() => setOpenOption(null)}
                       ></div>
-                      <div className="absolute top-full right-0 mt-2 min-w-[200px] bg-white z-[100] border border-[#e2e8f0] shadow-[0_12px_40px_rgba(15,23,42,0.12)] rounded-[24px] p-2 flex flex-col gap-1">
+                      <div className="absolute top-full right-0 mt-2 min-w-50 bg-foreground z-100 border border-muted shadow-lg rounded-3xl p-2 flex flex-col gap-1">
                         <button
-                          className="min-w-max px-4 h-11 text-left rounded-full text-[14px] font-medium text-[#0f172a] hover:bg-[#f2f7fd] transition-colors"
+                          className="min-w-max px-4 h-11 text-left rounded-full text-sm font-medium hover:bg-brand-light/10 transition-colors"
                           onClick={() => {
                             setAsCorrect(
                               q.id,
@@ -104,7 +105,7 @@ export default function QuestionOptions(q: Question) {
                             : "Jadikan Kunci Jawaban"}
                         </button>
                         <button
-                          className="min-w-max px-4 h-11 text-left rounded-full text-[14px] font-medium text-[#0f172a] hover:bg-[#f2f7fd] transition-colors"
+                          className="min-w-max px-4 h-11 text-left rounded-full text-sm font-medium hover:bg-brand-light/10 transition-colors"
                           onClick={() => {
                             setOpenScoreModal(o.id);
                             setOpenOption(null);
@@ -113,7 +114,7 @@ export default function QuestionOptions(q: Question) {
                           Atur Poin
                         </button>
                         <button
-                          className="min-w-max px-4 h-11 text-left rounded-full text-[14px] font-medium text-red-500 hover:bg-red-50 transition-colors"
+                          className="min-w-max px-4 h-11 text-left rounded-full text-sm font-medium text-red-500 hover:bg-red-50 transition-colors"
                           onClick={() => {
                             setAsCorrect(q.id, o.id, false);
                             removeQuestionOption(q.id, o.id);
@@ -132,7 +133,7 @@ export default function QuestionOptions(q: Question) {
 
           <button
             onClick={() => addQuestionOption(q.id)}
-            className="flex items-center gap-2 mt-2 px-4 py-2 text-[14px] font-semibold text-[#168bff] hover:text-[#005ed9] hover:bg-[#f2f7fd] rounded-full transition-colors"
+            className="flex items-center gap-2 mt-2 px-4 py-2 text-sm font-semibold text-brand hover:text-brand-dark hover:bg-brand-light/10 rounded-full transition-colors"
           >
             <LuPlus size={18} /> Tambah Opsi
           </button>
@@ -144,25 +145,25 @@ export default function QuestionOptions(q: Question) {
           <div className="w-full max-w-sm relative text-[15px]">
             <button
               type="button"
-              className="flex items-center justify-between px-6 w-full h-[58px] border border-[#e2e8f0] rounded-full cursor-default bg-[#f8fbff] transition-all outline-none pointer-events-none"
+              className="flex items-center justify-between px-6 w-full h-14.5 border border-muted rounded-full cursor-default bg-brand-light/10 transition-all outline-none pointer-events-none"
               onClick={() => setOpenSelect(!openSelect)}
             >
-              <span className="text-left text-[#0f172a] truncate">
+              <span className="text-left truncate">
                 Pratinjau dropdown
               </span>
               <LuChevronDown className="text-[#64748b]" size={20} />
             </button>
 
-            <div className="mt-2 left-0 w-full bg-white border border-[#e2e8f0] rounded-[24px] shadow-[0_12px_40px_rgba(15,23,42,0.12)] p-2 z-50">
+            <div className="mt-2 left-0 w-full bg-foreground border border-muted rounded-3xl shadow-lg p-2 z-50">
               <div className="max-h-64 overflow-auto">
                 <div className="w-full flex flex-col gap-1">
                   {q.options?.map((o, oi) => (
                     <label
                       key={o.id}
-                      className="w-full flex items-center gap-2 px-5 py-3 rounded-4xl hover:bg-[#f2f7fd] focus-within:bg-[#f2f7fd] text-[#0f172a] transition-colors outline-none"
+                      className="w-full flex items-center gap-2 px-5 py-3 rounded-4xl hover:bg-brand-light/10 focus-within:bg-brand-light/10 transition-colors outline-none"
                     >
                       <Textarea
-                        className="flex-1 text-[15px] outline-none resize-none text-[#0f172a]"
+                        className="flex-1 text-[15px] outline-none resize-none"
                         defaultValue={o.title}
                         onBlur={(e) =>
                           updateQuestionOptionTitle(q.id, o.id, e.target.value)
@@ -180,7 +181,7 @@ export default function QuestionOptions(q: Question) {
 
                   <button
                     onClick={() => addQuestionOption(q.id)}
-                    className="flex items-center gap-2 mt-2 px-4 py-2 text-[14px] font-semibold text-[#168bff] hover:text-[#005ed9] hover:bg-[#f2f7fd] rounded-full transition-colors"
+                    className="flex items-center gap-2 mt-2 px-4 py-2 text-sm font-semibold text-brand hover:text-brand-dark hover:bg-brand-light/10 rounded-full transition-colors"
                   >
                     <LuPlus size={18} /> Tambah Opsi
                   </button>

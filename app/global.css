@@ -2,12 +2,14 @@
 @import "./css/anim.module.css";
 
 :root {
-  --background: #eaeaea;
-  --background-light: #fafafa;
+  --background: #f8fbff;
   --foreground: #ffffff;
-  --brand: #0000ff;
-  --brand-dark: #0000c5;
-  --text: #202020;
+  --brand-light: #48a7ff;
+  --brand: #168bff;
+  --brand-dark: #005ed9;
+  --text: #0f172a;
+  --border: #e2e8f0;
+  --muted: #e2e8f0;
 }
 
 *::-webkit-scrollbar {
@@ -20,28 +22,20 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-background-light: var(--background-light);
   --color-foreground: var(--foreground);
-  --color-brand: var(--brand);
-  --color-brand-dark: var(--brand-dark);
-  --color-text: var(--text);
+  --color-brand-light: #48a7ff;
+  --color-brand: #168bff;
+  --color-brand-dark: #005ed9;
+  --color-text: #0f172a;
+  --color-border: #e2e8f0;
+  --color-muted: #e2e8f0;
+  --color-muted-dark: #d0d8e2;
   --font-sans: var(--font-inter), sans;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #eaeaea;
-    --background-light: #fafafa;
-    --foreground: #ffffff;
-    --brand: #0000ff;
-    --brand-dark: #0000c5;
-    --text: #202020;
-  }
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 14px
+    font-size: 14px;
   }
 }
 
@@ -50,23 +44,24 @@ button,
 input[type="radio"],
 input[type="checkbox"],
 label {
-  @apply !cursor-pointer;
+  @apply cursor-pointer!;
 }
 
 body {
   @apply bg-background text-text;
 }
 
-html::-webkit-scrollbar {
+.scrollbar-hidden::-webkit-scrollbar {
   @apply hidden;
 }
 
 @layer components {
   .container {
-    @apply py-16 px-6 sm:px-8 md:px-16 !max-w-none;
+    @apply py-16 px-6 sm:px-8 md:px-16 max-w-none!;
   }
 
   .content {
     @apply max-w-7xl mx-auto w-full;
   }
+  
 }
