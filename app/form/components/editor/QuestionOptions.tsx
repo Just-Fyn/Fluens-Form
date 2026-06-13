@@ -66,7 +66,7 @@ export default function QuestionOptions(q: Question) {
                 />
 
                 <Textarea
-                  className="flex-1 text-[15px] outline-none resize-none"
+                  className="flex-1 text-sm outline-none resize-none"
                   defaultValue={o.title}
                   onBlur={(e) =>
                     updateQuestionOptionTitle(q.id, o.id, e.target.value)
@@ -76,7 +76,7 @@ export default function QuestionOptions(q: Question) {
 
                 <div className="relative mt-1 mr-1 flex items-center">
                   <button
-                    className={`w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openOption === o.id ? "bg-brand-light/10 text-brand" : "text-[#64748b] hover:bg-muted"}`}
+                    className={`w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openOption === o.id ? "bg-brand-light/10 text-brand" : "text-muted-darker hover:bg-muted"}`}
                     onClick={() => opToggle(o.id)}
                   >
                     <LuEllipsisVertical size={18} />
@@ -142,7 +142,7 @@ export default function QuestionOptions(q: Question) {
 
       {q.type === "select" && (
         <>
-          <div className="w-full max-w-sm relative text-[15px]">
+          <div className="w-full max-w-sm relative text-sm">
             <button
               type="button"
               className="flex items-center justify-between px-6 w-full h-14.5 border border-muted rounded-full cursor-default bg-brand-light/10 transition-all outline-none pointer-events-none"
@@ -151,7 +151,7 @@ export default function QuestionOptions(q: Question) {
               <span className="text-left truncate">
                 Pratinjau dropdown
               </span>
-              <LuChevronDown className="text-[#64748b]" size={20} />
+              <LuChevronDown className="text-muted-darker" size={20} />
             </button>
 
             <div className="mt-2 left-0 w-full bg-foreground border border-muted rounded-3xl shadow-lg p-2 z-50">
@@ -163,7 +163,7 @@ export default function QuestionOptions(q: Question) {
                       className="w-full flex items-center gap-2 px-5 py-3 rounded-4xl hover:bg-brand-light/10 focus-within:bg-brand-light/10 transition-colors outline-none"
                     >
                       <Textarea
-                        className="flex-1 text-[15px] outline-none resize-none"
+                        className="flex-1 text-sm outline-none resize-none"
                         defaultValue={o.title}
                         onBlur={(e) =>
                           updateQuestionOptionTitle(q.id, o.id, e.target.value)

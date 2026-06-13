@@ -45,7 +45,7 @@ export default function QuestionSettings({ qId }: { qId: string }) {
           openOptions ? closeAll() : setOpenOptions(true);
         }}
         className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
-          openOptions ? "bg-brand-light/10 text-brand" : "text-[#64748b] hover:bg-brand-light/10 hover:text-text"
+          openOptions ? "bg-brand-light/10 text-brand" : "text-muted-darker hover:bg-brand-light/10 hover:text-text"
         }`}
       >
         <LuEllipsisVertical size={20} />

@@ -115,13 +115,13 @@ export default function SubmissionPage() {
 
               <div className="relative z-10">
                 <Textarea
-                  className="w-full text-3xl md:text-[42px] font-bold tracking-tight mb-4 outline-none resize-none"
+                  className="w-full text-3xl md:text-4xl font-bold tracking-tight mb-4 outline-none resize-none"
                   minRows={1}
                   defaultValue={title}
                   onBlur={(e) => updateForm({ title: !title.trim() ? "Formulir Tanpa Judul" : e.target.value })}
                 />
                 <Textarea
-                  className="w-full text-[18px] text-[#64748b] leading-[1.8] overflow-hidden outline-none resize-none"
+                  className="w-full text-lg text-muted-darker leading-[1.8] overflow-hidden outline-none resize-none"
                   defaultValue={description}
                   onBlur={(e) => updateForm({ description: e.target.value })}
                   placeholder="Deskripsi singkat (opsional)"

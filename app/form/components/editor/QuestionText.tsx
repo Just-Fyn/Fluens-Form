@@ -30,7 +30,7 @@ export default function QuestionText(q: Question) {
         )}
         <button
           type="button"
-          className={`mt-2 w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openSettings ? "bg-brand-light/10 text-brand" : "text-[#64748b] hover:bg-muted"}`}
+          className={`mt-2 w-9 h-9 flex items-center justify-center rounded-full transition-colors ${openSettings ? "bg-brand-light/10 text-brand" : "text-muted-darker hover:bg-muted"}`}
           onClick={() => setOpenSettings(true)}
         >
           <LuEllipsisVertical size={18} />

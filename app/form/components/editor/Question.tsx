@@ -26,7 +26,7 @@ export default function Question({ qId, qi }: { qId: string; qi: number }) {
     >
       <div className="flex justify-between items-start mb-6 gap-4 relative z-80">
         <Textarea
-          className="flex-1 text-[18px] leading-[1.7] font-medium outline-none resize-none"
+          className="flex-1 text-lg leading-[1.7] font-medium outline-none resize-none"
           defaultValue={q.title}
           onBlur={(e) =>
             updateQuestion(q.id, {
@@ -36,7 +36,7 @@ export default function Question({ qId, qi }: { qId: string; qi: number }) {
         />
 
         {q.totalScore !== null && (
-          <div className="shrink-0 px-4 py-1.5 rounded-full bg-brand-light/10 border border-muted text-sm font-semibold tracking-wide text-[#64748b]">
+          <div className="shrink-0 px-4 py-1.5 rounded-full bg-brand-light/10 border border-muted text-sm font-semibold tracking-wide text-muted-darker">
             {Math.round(q.totalScore)} Poin
           </div>
         )}
@@ -52,7 +52,7 @@ export default function Question({ qId, qi }: { qId: string; qi: number }) {
       </div>
 
       <div className="flex items-center justify-end gap-3 pt-4 border-t border-muted">
-          <div className="text-sm font-medium text-[#64748b]">Wajib diisi</div>
+          <div className="text-sm font-medium text-muted-darker">Wajib diisi</div>
           <button
             className={`relative inline-flex h-7 w-13 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 ${
               q.required ? "bg-brand" : "bg-muted"

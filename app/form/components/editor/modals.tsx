@@ -34,10 +34,10 @@ export function SuccessModal({
           <LuCheck size={40} strokeWidth={3} />
         </div>
         
-        <h2 className="font-bold text-[24px] mb-6">Form berhasil disimpan</h2>
+        <h2 className="font-bold text-2xl mb-6">Form berhasil disimpan</h2>
         
         <div className="text-left w-full mb-8">
-          <label className="text-sm font-medium text-[#64748b] ml-2">Bagikan Tautan</label>
+          <label className="text-sm font-medium text-muted-darker ml-2">Bagikan Tautan</label>
           <div className="mt-2 flex bg-brand-light/10 rounded-full border border-muted focus-within:border-brand focus-within:shadow-[0_0_0_5px_var(--brand)]/12 overflow-hidden transition-all h-14">
             <input
               value={url}
@@ -92,17 +92,17 @@ export function ErrorModal({
           <LuX size={40} strokeWidth={3} />
         </div>
         
-        <h2 className="font-bold text-[24px] mb-6">Gagal menyimpan form</h2>
+        <h2 className="font-bold text-2xl mb-6">Gagal menyimpan form</h2>
         
         <div className="text-left w-full space-y-4 mb-8">
           <div>
-            <div className="text-sm font-medium text-[#64748b] ml-2">Penyebab</div>
+            <div className="text-sm font-medium text-muted-darker ml-2">Penyebab</div>
             <div className="min-h-12 px-5 py-3 mt-1 rounded-[20px] bg-red-50 border border-red-100 text-sm text-red-600">
               {cause}
             </div>
           </div>
           <div>
-            <div className="text-sm font-medium text-[#64748b] ml-2">Kode Error</div>
+            <div className="text-sm font-medium text-muted-darker ml-2">Kode Error</div>
             <div className="min-h-12 px-5 py-3 mt-1 rounded-[20px] bg-red-50 border border-red-100 text-sm font-mono text-red-600">
               {code}
             </div>

@@ -6,7 +6,7 @@ export default function LoadingForm({text}:{text:string}) {
           <div className="absolute inset-0 rounded-full border-8 border-brand/20"></div>
           <div className="absolute inset-0 rounded-full border-8 border-transparent border-t-brand animate-spin"></div>
         </div>
-        <div className="text-[#64748b] font-medium tracking-wide">
+        <div className="text-muted-darker font-medium tracking-wide">
           {text}
           <span className="animate-pulse">...</span>
         </div>

@@ -9,13 +9,13 @@ export default function Question({ q }: { q: SubmissionQuestion }) {
   return (
     <QuestionCard>
       <div className="flex justify-between items-start mb-6 gap-4 relative z-10">
-        <div className="text-[18px] leading-[1.7] font-medium outline-none resize-none">
+        <div className="text-lg leading-[1.7] font-medium outline-none resize-none">
           {q.title}
           {q.required && <span className="text-red-500 ml-1.5">*</span>}
         </div>
         
         {q.score !== null && (
-          <div className="shrink-0 px-4 py-1.5 rounded-full bg-brand-light/10 border border-muted text-sm font-semibold tracking-wide text-[#64748b]">
+          <div className="shrink-0 px-4 py-1.5 rounded-full bg-brand-light/10 border border-muted text-sm font-semibold tracking-wide text-muted-darker">
             {Math.round(q.score)}/{q.totalScore} Poin
           </div>
         )}

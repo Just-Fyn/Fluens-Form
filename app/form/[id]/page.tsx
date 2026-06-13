@@ -58,7 +58,7 @@ export default function SubmissionPage() {
               <h2 className="text-3xl font-bold mb-2">
                 {form?.title}
               </h2>
-              <p className="text-[#64748b] mb-8">{form?.description}</p>
+              <p className="text-muted-darker mb-8">{form?.description}</p>
 
               <div className="inline-flex items-center gap-2 h-9 px-5 rounded-full bg-green-50 border border-green-100 text-green-600 font-semibold mb-8">
                 Respon terkirim
@@ -87,10 +87,10 @@ export default function SubmissionPage() {
                 <div className="absolute -top-30 -right-30 w-60 h-60 rounded-full bg-[radial-gradient(circle,rgba(22,139,255,0.15),transparent)]"></div>
 
                 <div className="relative z-10">
-                  <h1 className="text-3xl md:text-[42px] font-bold tracking-tight mb-4 outline-none resize-none">
+                  <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 outline-none resize-none">
                     {form?.title}
                   </h1>
-                  <p className="text-[18px] text-[#64748b] leading-[1.8] outline-none resize-none">
+                  <p className="text-lg text-muted-darker leading-[1.8] outline-none resize-none">
                     {form?.description}
                   </p>
                 </div>

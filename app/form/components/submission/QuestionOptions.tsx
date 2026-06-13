@@ -32,7 +32,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
                   checked={isSelected}
                   name={q.id}
                 />
-                <span className="flex-1 text-[15px] outline-none resize-none">
+                <span className="flex-1 text-sm outline-none resize-none">
                   {o.title}
                 </span>
               </OptionLabel>
@@ -42,7 +42,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
           {Boolean(q.answers.length && q.type === "radio") && (
             <button
               type="button"
-              className="inline-block mt-2 px-2 py-1 text-sm text-[#64748b] hover:text-brand font-medium transition-colors"
+              className="inline-block mt-2 px-2 py-1 text-sm text-muted-darker hover:text-brand font-medium transition-colors"
               onClick={() => updateAnswers(q.id, q.answers, false)}
             >
               Hapus jawaban
@@ -60,7 +60,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
             ></div>
           )}
           <div
-            className={`w-full max-w-sm relative text-[15px] ${openSelect ? "z-110" : ""}`}
+            className={`w-full max-w-sm relative text-sm ${openSelect ? "z-110" : ""}`}
           >
             {" "}
             <button
@@ -74,7 +74,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
                 {q.options.filter((o) => o.id === q.answers)[0]?.title ||
                   "Pilih opsi..."}
               </span>
-              <LuChevronDown className="text-[#64748b]" size={20} />
+              <LuChevronDown className="text-muted-darker" size={20} />
             </button>
             <div
               hidden={!openSelect || !q.options.length}
@@ -103,7 +103,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
           {Boolean(q.answers.length) && (
             <button
               type="button"
-              className="block mt-3 px-2 py-1 text-sm text-[#64748b] hover:text-brand font-medium transition-colors"
+              className="block mt-3 px-2 py-1 text-sm text-muted-darker hover:text-brand font-medium transition-colors"
               onClick={() => updateAnswers(q.id, q.answers, false)}
             >
               Hapus jawaban

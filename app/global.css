@@ -30,6 +30,7 @@
   --color-border: #e2e8f0;
   --color-muted: #e2e8f0;
   --color-muted-dark: #d0d8e2;
+  --color-muted-darker: #64748b;
   --font-sans: var(--font-inter), sans;
 }
 

@@ -38,7 +38,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
                   readOnly
                 />
 
-                <span className="flex-1 text-[15px] outline-none resize-none">
+                <span className="flex-1 text-sm outline-none resize-none">
                   {o.title}
                 </span>
 
@@ -66,7 +66,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
               onClick={() => setOpenSelect(false)}
             ></div>
           )}
-          <div className={`w-full max-w-sm relative text-[15px] ${openSelect ? "z-50" : ""}`}>
+          <div className={`w-full max-w-sm relative text-sm ${openSelect ? "z-50" : ""}`}>
             <button
               type="button"
               className={`flex items-center justify-between px-6 w-full h-14.5 border border-muted rounded-full cursor-default bg-brand-light/10 transition-all outline-none
@@ -76,7 +76,7 @@ export default function QuestionOptions(q: SubmissionQuestion) {
               <span className="text-left truncate">
                 {q.options.filter((o) => o.id === q.answers)[0]?.title || <span className="opacity-50">Tidak dijawab</span>}
               </span>
-              <LuChevronDown className="text-[#64748b]" size={20} />
+              <LuChevronDown className="text-muted-darker" size={20} />
             </button>
           </div>
         </>
