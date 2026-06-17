@@ -5,8 +5,8 @@ import TextareaAutosize, {
 export function PrimaryTextarea(props: TextareaAutosizeProps) {
   return (
     <TextareaAutosize
-      className="w-full p-5 border border-muted rounded-3xl outline-none resize-none text-sm bg-brand-light/10 transition-[background-color,border-color,box-shadow] focus:bg-foreground focus:border-brand focus:shadow-[0_0_0_5px_var(--brand)]/12 scrollbar-hidden"
-      {...props}
+    {...props}
+    className={`w-full p-4 border border-border rounded-3xl outline-none resize-none text-sm transition-[background-color,border-color,box-shadow] focus:bg-foreground focus:border-brand focus:shadow-[0_0_0_5px_var(--brand)]/12 scrollbar-hidden ${props.className}`}
       maxRows={6}
     />
   );

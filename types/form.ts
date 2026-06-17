@@ -5,7 +5,7 @@ export interface Form {
   title: string;
   description: string;
   questions: Question[];
-  options: Record<string, any>;
+  settings: Partial<FormSettings>;
   totalScore: number | null;
   createdAt: string;
   updatedAt: string;
@@ -18,7 +18,7 @@ export interface DBForm {
   title: string;
   description: string;
   questions: Question[];
-  options: Record<string, any>;
+  settings: Partial<FormSettings>;
   total_score: number | null;
   created_at: string;
   updated_at: string;
@@ -34,7 +34,7 @@ export interface EditorForm {
   title: string;
   description: string;
   questions: Question[];
-  options: Record<string, any>;
+  settings: Partial<FormSettings>;
   totalScore: number | null;
 }
 
@@ -60,6 +60,36 @@ export type Question = {
   required: boolean;
 };
 
+export interface FormSettings {
+  isQuiz: boolean;
+  
+  allowSeeWrongAnswers: boolean;
+  allowSeeCorrectAnswers: boolean;
+  allowSeeScore: boolean;
+  
+  defaultScoreValue: number;
+  
+  shuffleQuestions: boolean;
+  
+  allowSeeResult: boolean;
+  
+  questionRequiredDefault: boolean; // complete
+  
+  /* ====== TO ADDED NEXT ====== 
+  
+  releaseMarks: 'immediately' | 'later'; 
+  
+  confirmationMessage: string;
+  showLinkToSubmitAnother: boolean;
+  
+  showProgressBar: boolean;
+  
+  disableAutosave: boolean;
+  
+  */ 
+
+}
+
 // === SUBMISSION === //
 
 export interface Submission {
@@ -67,7 +97,7 @@ export interface Submission {
   formId: number;
   uuid: string;
   data: SubmissionData;
-  createdAt:string;
+  createdAt: string;
   updatedAt: string;
 }
 
@@ -76,7 +106,7 @@ export interface DBSubmission {
   form_id: number;
   uuid: string;
   data: SubmissionData;
-  created_at:string;
+  created_at: string;
   updated_at: string;
 }
 
@@ -105,4 +135,4 @@ export type SubmissionQuestion = {
   score: number | null;
   correctAnswers?: string[];
   totalScore?: number | null;
-}
+};
