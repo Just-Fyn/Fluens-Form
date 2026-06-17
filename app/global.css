@@ -28,6 +28,7 @@
   --color-brand-dark: #005ed9;
   --color-text: #0f172a;
   --color-border: #e2e8f0;
+  --color-muted-light: #f8fafc;
   --color-muted: #e2e8f0;
   --color-muted-dark: #d0d8e2;
   --color-muted-darker: #64748b;
@@ -58,7 +59,7 @@ body {
 
 @layer components {
   .container {
-    @apply py-16 px-6 sm:px-8 md:px-16 max-w-none!;
+    @apply py-6 px-6 max-w-none!;
   }
 
   .content {
